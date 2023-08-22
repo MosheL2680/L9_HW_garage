@@ -84,9 +84,9 @@ def save():
     else:
         print("No data to save")
 
-# load list from CSV when program starts
+# load list from CSV (if exists) when program starts
 def load():
-    if "cars.csv":
+    if os.path.exists("cars.csv"):
         with open("cars.csv", "r") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
