@@ -86,11 +86,12 @@ def save():
 
 # load list from CSV when program starts
 def load():
-    with open("cars.csv", "r") as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                cars.append({"color": row["color"], "model": row["model"], "type": row["type"]})    
-
+    if "cars.csv":
+        with open("cars.csv", "r") as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    cars.append({"color": row["color"], "model": row["model"], "type": row["type"]})    
+    
 # terminal - clear and change font color when program starts
 def terminal():
     os.system("cls")
